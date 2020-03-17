@@ -34,10 +34,6 @@ const channellist = [
     {
         id: 590824856300421136,
         name: "Intern"
-    },
-    {
-        id: 590825102136967211,
-        name: "Special Event"
     }
 ];
 //const filterUpdate = channellist.filter(array => array.update == true);
@@ -90,7 +86,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
         if (filterID.length > 0) {
             if (newMember.presence.game != null) {
                 if (newMember.presence.game.type == 1) {
-                    newMember.voiceChannel.setName("Stream: " + toTitleCase(newMember.presence.game.name)).catch(console.error);
+                    newMember.voiceChannel.setName("🔴 " + toTitleCase(newMember.voiceChannel.name)).catch(console.error);
                 }
             }
         }
